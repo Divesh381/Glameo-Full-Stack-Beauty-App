@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fronted
+  namespace: gl-app
+spec:
+  selector:
+    app: fronted
+  ports:
+  - port: 3003
+    targetPort: 80
+    

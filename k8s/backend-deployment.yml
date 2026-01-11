@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: gl-app
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      name: backend-pod
+      namespace: gl-app
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: gl-app
+        image: diveshkumar1234/glapp-backend:latest
+        ports:
+        - containerPort: 8004
+        env:
+          - name: DATABASE_NAME
+            value: glameo_beauty_backend
+          - name: DATABASE_USER
+            value: glameo_beauty_backend
+          - name: DATABASE_PASSWORD
+            value: glameo_beauty_backend
+          - name: DATABASE_HOST
+            value: postgres.gl-app.svc.cluster.local  
+          - name: DATABASE_PORT
+            value: "5433"  
+          
+
+

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  namespace: gl-app
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      name: postgres-pod
+      namespace: gl-app
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:16
+        ports:
+        - containerPort: 5433
+        env:
+        - name: POSTGRES_DB
+          value: glameo_beauty_backend
+        - name: POSTGRES_USER
+          value: glameo_beauty_backend
+        - name: POSTGRES_PASSWORD
+          value: glameo_beauty_backend
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-pvc   
+      
+          
+
+
