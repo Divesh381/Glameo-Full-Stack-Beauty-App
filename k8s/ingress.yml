@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: glapp-ingress
+  namespace: gl-app
+  labels:
+    name: glapp-ingress
+  # annotations:
+  #   nginx.ingress.kubernetes.io/rewrite-target: /
+  #   nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec: 
+  rules:
+  - host: glapp.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: fronted
+            port:
+              number: 3003
+      - pathType: Prefix
+        path: "/api/docs"
+        backend:
+          service:
+            name: backend
+            port:
+              number: 8004

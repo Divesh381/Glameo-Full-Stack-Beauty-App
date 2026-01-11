@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fronted-deployment
+  namespace: gl-app
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: fronted
+  template:
+    metadata:
+      name: fronted-pod
+      namespace: gl-app
+      labels:
+        app: fronted
+    spec:
+      containers:
+      - name: gl-app
+        image: diveshkumar1234/glapp-fronted:latest
+        ports:
+        - containerPort: 3003
+          
+
+
