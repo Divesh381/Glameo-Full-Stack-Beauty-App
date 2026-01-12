@@ -468,7 +468,7 @@ def validateLoginCustomerAndBeauticiansData(data:dict,db:Session):
                 "message" : api_response.PASSWORD_NOT_PROVIDED_FOR_LOGIN,
                 "code" : api_response_codes.PASSWORD_NOT_PROVIDED_FOR_LOGIN
             }
-        #making communication with database, so keeping code inside try-except
+        ##making communication with database, so keeping code inside try-except
         try:
             if isUserIdIsEmail:
                 # checking with emailId

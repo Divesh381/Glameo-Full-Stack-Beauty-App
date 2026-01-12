@@ -45,7 +45,7 @@ export default NotificationProvider;
 //     enqueueSnackbar(message, { variant: "success", autoHideDuration: 3000 });
 //   };
 
-//   const notifyError = (message) => {
+////   const notifyError = (message) => {
 //     console.log("❌ notifyError Triggered:", message);
 //     enqueueSnackbar(message, { variant: "error", autoHideDuration: 3000 });
 //   };
