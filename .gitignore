@@ -1,0 +1,39 @@
+# =====================
+# Backend (Python)
+# =====================
+glameo-backend-project/venv/
+glameo-backend-project/env/
+glameo-backend-project/.env
+__pycache__/
+*.pyc
+
+# =====================
+# Frontend (Node / Vite / React)
+# =====================
+glameo-project-fr/node_modules/
+glameo-project-fr/dist/
+glameo-project-fr/dist-ssr/
+glameo-project-fr/.env
+glameo-project-fr/*.local
+
+# Logs
+glameo-project-fr/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =====================
+# Editor / OS files
+# =====================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
